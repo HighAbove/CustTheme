@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A219A6A1F0A0E0B007F2983 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A219A691F0A0E0B007F2983 /* Theme.swift */; };
+		9ABA5D311F11B96A000F145F /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5D301F11B96A000F145F /* LandingViewController.swift */; };
+		9ABA5D331F11BB14000F145F /* LandingHomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5D321F11BB14000F145F /* LandingHomeTabController.swift */; };
+		9ABA5D351F12A80D000F145F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5D341F12A80D000F145F /* UIImage.swift */; };
 		9AF75EE81F09F795006A9D94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF75EE71F09F795006A9D94 /* AppDelegate.swift */; };
-		9AF75EEA1F09F795006A9D94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF75EE91F09F795006A9D94 /* ViewController.swift */; };
 		9AF75EED1F09F795006A9D94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF75EEB1F09F795006A9D94 /* Main.storyboard */; };
 		9AF75EEF1F09F795006A9D94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF75EEE1F09F795006A9D94 /* Assets.xcassets */; };
 		9AF75EF21F09F795006A9D94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF75EF01F09F795006A9D94 /* LaunchScreen.storyboard */; };
 		9AF75EFD1F09F795006A9D94 /* CustomThemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF75EFC1F09F795006A9D94 /* CustomThemeTests.swift */; };
+		9AF75F101F09FF71006A9D94 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF75F0F1F09FF71006A9D94 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A219A691F0A0E0B007F2983 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		9ABA5D301F11B96A000F145F /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		9ABA5D321F11BB14000F145F /* LandingHomeTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingHomeTabController.swift; sourceTree = "<group>"; };
+		9ABA5D341F12A80D000F145F /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		9AF75EE41F09F795006A9D94 /* CustomTheme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTheme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF75EE71F09F795006A9D94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9AF75EE91F09F795006A9D94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9AF75EEC1F09F795006A9D94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9AF75EEE1F09F795006A9D94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AF75EF11F09F795006A9D94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +43,7 @@
 		9AF75EF81F09F795006A9D94 /* CustomThemeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomThemeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF75EFC1F09F795006A9D94 /* CustomThemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThemeTests.swift; sourceTree = "<group>"; };
 		9AF75EFE1F09F795006A9D94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AF75F0F1F09FF71006A9D94 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9ABA5D361F12A837000F145F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9AF75F0F1F09FF71006A9D94 /* UIColor.swift */,
+				9ABA5D341F12A80D000F145F /* UIImage.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		9AF75EDB1F09F795006A9D94 = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +95,10 @@
 			isa = PBXGroup;
 			children = (
 				9AF75EE71F09F795006A9D94 /* AppDelegate.swift */,
-				9AF75EE91F09F795006A9D94 /* ViewController.swift */,
+				9ABA5D361F12A837000F145F /* Extensions */,
+				9A219A691F0A0E0B007F2983 /* Theme.swift */,
+				9ABA5D301F11B96A000F145F /* LandingViewController.swift */,
+				9ABA5D321F11BB14000F145F /* LandingHomeTabController.swift */,
 				9AF75EEB1F09F795006A9D94 /* Main.storyboard */,
 				9AF75EEE1F09F795006A9D94 /* Assets.xcassets */,
 				9AF75EF01F09F795006A9D94 /* LaunchScreen.storyboard */,
@@ -201,8 +221,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AF75EEA1F09F795006A9D94 /* ViewController.swift in Sources */,
+				9AF75F101F09FF71006A9D94 /* UIColor.swift in Sources */,
+				9A219A6A1F0A0E0B007F2983 /* Theme.swift in Sources */,
 				9AF75EE81F09F795006A9D94 /* AppDelegate.swift in Sources */,
+				9ABA5D351F12A80D000F145F /* UIImage.swift in Sources */,
+				9ABA5D311F11B96A000F145F /* LandingViewController.swift in Sources */,
+				9ABA5D331F11BB14000F145F /* LandingHomeTabController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +438,7 @@
 				9AF75F031F09F795006A9D94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9AF75F041F09F795006A9D94 /* Build configuration list for PBXNativeTarget "CustomThemeTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +447,7 @@
 				9AF75F061F09F795006A9D94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
