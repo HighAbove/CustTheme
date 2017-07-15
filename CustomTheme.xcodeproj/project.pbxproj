@@ -8,15 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		9A219A6A1F0A0E0B007F2983 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A219A691F0A0E0B007F2983 /* Theme.swift */; };
+		9A63C5FF1F1479E3001F0C6F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63C5FE1F1479E3001F0C6F /* UIColor.swift */; };
+		9A63C6071F15A16C001F0C6F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63C6061F15A16C001F0C6F /* HomeViewController.swift */; };
+		9A63C6171F199406001F0C6F /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63C6161F199406001F0C6F /* HomeCollectionViewController.swift */; };
+		9A63C6191F1A6CA3001F0C6F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63C6181F1A6CA3001F0C6F /* CategoryCell.swift */; };
 		9ABA5D311F11B96A000F145F /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5D301F11B96A000F145F /* LandingViewController.swift */; };
-		9ABA5D331F11BB14000F145F /* LandingHomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5D321F11BB14000F145F /* LandingHomeTabController.swift */; };
 		9ABA5D351F12A80D000F145F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5D341F12A80D000F145F /* UIImage.swift */; };
 		9AF75EE81F09F795006A9D94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF75EE71F09F795006A9D94 /* AppDelegate.swift */; };
 		9AF75EED1F09F795006A9D94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF75EEB1F09F795006A9D94 /* Main.storyboard */; };
 		9AF75EEF1F09F795006A9D94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF75EEE1F09F795006A9D94 /* Assets.xcassets */; };
 		9AF75EF21F09F795006A9D94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF75EF01F09F795006A9D94 /* LaunchScreen.storyboard */; };
 		9AF75EFD1F09F795006A9D94 /* CustomThemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF75EFC1F09F795006A9D94 /* CustomThemeTests.swift */; };
-		9AF75F101F09FF71006A9D94 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF75F0F1F09FF71006A9D94 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +33,11 @@
 
 /* Begin PBXFileReference section */
 		9A219A691F0A0E0B007F2983 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		9A63C5FE1F1479E3001F0C6F /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		9A63C6061F15A16C001F0C6F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9A63C6161F199406001F0C6F /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		9A63C6181F1A6CA3001F0C6F /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		9ABA5D301F11B96A000F145F /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
-		9ABA5D321F11BB14000F145F /* LandingHomeTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingHomeTabController.swift; sourceTree = "<group>"; };
 		9ABA5D341F12A80D000F145F /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		9AF75EE41F09F795006A9D94 /* CustomTheme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTheme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF75EE71F09F795006A9D94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +48,6 @@
 		9AF75EF81F09F795006A9D94 /* CustomThemeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomThemeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF75EFC1F09F795006A9D94 /* CustomThemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThemeTests.swift; sourceTree = "<group>"; };
 		9AF75EFE1F09F795006A9D94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9AF75F0F1F09FF71006A9D94 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +71,8 @@
 		9ABA5D361F12A837000F145F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9AF75F0F1F09FF71006A9D94 /* UIColor.swift */,
 				9ABA5D341F12A80D000F145F /* UIImage.swift */,
+				9A63C5FE1F1479E3001F0C6F /* UIColor.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -98,7 +102,9 @@
 				9ABA5D361F12A837000F145F /* Extensions */,
 				9A219A691F0A0E0B007F2983 /* Theme.swift */,
 				9ABA5D301F11B96A000F145F /* LandingViewController.swift */,
-				9ABA5D321F11BB14000F145F /* LandingHomeTabController.swift */,
+				9A63C6181F1A6CA3001F0C6F /* CategoryCell.swift */,
+				9A63C6061F15A16C001F0C6F /* HomeViewController.swift */,
+				9A63C6161F199406001F0C6F /* HomeCollectionViewController.swift */,
 				9AF75EEB1F09F795006A9D94 /* Main.storyboard */,
 				9AF75EEE1F09F795006A9D94 /* Assets.xcassets */,
 				9AF75EF01F09F795006A9D94 /* LaunchScreen.storyboard */,
@@ -166,7 +172,7 @@
 				TargetAttributes = {
 					9AF75EE31F09F795006A9D94 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = EHL78R8DQX;
+						DevelopmentTeam = PAHG2435QN;
 						ProvisioningStyle = Automatic;
 					};
 					9AF75EF71F09F795006A9D94 = {
@@ -221,12 +227,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AF75F101F09FF71006A9D94 /* UIColor.swift in Sources */,
 				9A219A6A1F0A0E0B007F2983 /* Theme.swift in Sources */,
+				9A63C5FF1F1479E3001F0C6F /* UIColor.swift in Sources */,
 				9AF75EE81F09F795006A9D94 /* AppDelegate.swift in Sources */,
+				9A63C6191F1A6CA3001F0C6F /* CategoryCell.swift in Sources */,
 				9ABA5D351F12A80D000F145F /* UIImage.swift in Sources */,
+				9A63C6171F199406001F0C6F /* HomeCollectionViewController.swift in Sources */,
 				9ABA5D311F11B96A000F145F /* LandingViewController.swift in Sources */,
-				9ABA5D331F11BB14000F145F /* LandingHomeTabController.swift in Sources */,
+				9A63C6071F15A16C001F0C6F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = EHL78R8DQX;
+				DEVELOPMENT_TEAM = PAHG2435QN;
 				INFOPLIST_FILE = CustomTheme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rightsemeon.CustomTheme;
@@ -380,7 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = EHL78R8DQX;
+				DEVELOPMENT_TEAM = PAHG2435QN;
 				INFOPLIST_FILE = CustomTheme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rightsemeon.CustomTheme;

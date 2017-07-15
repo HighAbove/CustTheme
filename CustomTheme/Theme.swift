@@ -9,4 +9,5 @@ import UIKit
 
 class Theme {
     static let mainColor = UIColor.FlatColor.Red.Gambel
+    static let mainColorDark = UIColor.FlatColor.Red.Valencia
 }

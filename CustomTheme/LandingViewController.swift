@@ -8,10 +8,9 @@
 
 import UIKit
 
-class LandingViewController: UITabBarController, UITabBarControllerDelegate {
+class LandingViewController: UITabBarController {
     
     //MARK: tab bar properties
-    //var tabBarHeight: CGFloat = 60
     var tabBarTextAttributesNormal = [NSFontAttributeName: UIFont.systemFont(ofSize: 8), NSForegroundColorAttributeName: UIColor.black]
     var tabBarTextAttributesSelected = [NSFontAttributeName: UIFont.systemFont(ofSize: 8), NSForegroundColorAttributeName: Theme.mainColor]
     /*
@@ -23,58 +22,25 @@ class LandingViewController: UITabBarController, UITabBarControllerDelegate {
     }()
     */
     
-    //MARK: declare tab bar item
-    var homeTabItem: UITabBarItem = {
-        let icon =  UIImage(named: "HomeFilled")
-        let tab = UITabBarItem(title: "HOME", image: icon?.tint(with: .black).withRenderingMode(.alwaysOriginal), selectedImage: icon)
-        tab.titlePositionAdjustment = UIOffsetMake(0,-5)
-        return tab
-    }()
-    
-    var favTabItem: UITabBarItem = {
-        let icon =  UIImage(named: "HeartFilled")
-        let tab = UITabBarItem(title: "FAVORITES", image: icon?.tint(with: .black).withRenderingMode(.alwaysOriginal), selectedImage: icon)
-        tab.titlePositionAdjustment = UIOffsetMake(0,-5)
-        return tab
-    }()
-    
-    var msgTabItem: UITabBarItem = {
-        let icon =  UIImage(named: "MessageFilled")
-        let tab = UITabBarItem(title: "MESSAGE", image: icon?.tint(with: .black).withRenderingMode(.alwaysOriginal), selectedImage: icon)
-        tab.titlePositionAdjustment = UIOffsetMake(0,-5)
-        return tab
-    }()
-    
-    //MARK: declare the tab view controllers
-    //FIXME: replace UIViewController with LandingHomeTabController() and remove this comment
-    lazy var homeController: UIViewController = {
-        //let controller = LandingHomeTabController()
-        let controller = UIViewController()
-        controller.tabBarItem = self.homeTabItem
+    //MARK: define the navigation controllers
+    lazy var homeController: HomeViewController = {
+        let controller = HomeViewController()
+        controller.navigationBar.barTintColor = Theme.mainColor
+        let icon = UIImage(named:"HomeFilled")
+        let tabItem = UITabBarItem(title: "HOME", image: icon?.tint(with: .black).withRenderingMode(.alwaysOriginal), selectedImage: icon)
+        tabItem.titlePositionAdjustment = UIOffsetMake(0,-5)
+        controller.tabBarItem = tabItem
         return controller
     }()
-    //FIXME: replace UIViewController with LandingFavoriteTabController() and remove this comment
-    lazy var favoriteController: UIViewController = {
-        //let controller = LandingHomeTabController()
-        let controller = UIViewController()
-        controller.tabBarItem = self.favTabItem
-        return controller
-    }()
-    //FIXME: replace UIViewController with LandingFavoriteTabController() and remove this comment
-    lazy var messageController: UIViewController = {
-        //let controller = LandingHomeTabController()
-        let controller = UIViewController()
-        controller.tabBarItem = self.msgTabItem
-        return controller
-    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [homeController, favoriteController, messageController]
-        delegate = self
         
-        setupTabBar()
-        // Do any additional setup after loading the view.
+        //append the view that contains the tab bar item in viewControllers
+        viewControllers = [homeController, createVC(iconName:"HeartFilled", title:"FAVORITES"), createVC(iconName: "MessageFilled", title: "MESSAGE")]
+        
+        setupTab()
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,26 +48,55 @@ class LandingViewController: UITabBarController, UITabBarControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: setup the Tab bar
-    func setupTabBar() {
+    //MARK: show status bar. Need to modify info.plist
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return selectedViewController?.preferredStatusBarUpdateAnimation ?? .fade
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return selectedViewController?.preferredStatusBarStyle ?? .default
+    }
+    override var prefersStatusBarHidden: Bool {
+        return selectedViewController?.prefersStatusBarHidden ?? false
+    }
+    
+    //use this template function to create multiple UIViewControllers
+    private func createVC(iconName:String, title:String) -> UINavigationController{
+        let controller  = UINavigationController()
+        controller.navigationBar.barTintColor = Theme.mainColor
+        let icon = UIImage(named:iconName)
+        let tabItem = UITabBarItem(title: title, image: icon?.tint(with: .black).withRenderingMode(.alwaysOriginal), selectedImage: icon)
+        tabItem.titlePositionAdjustment = UIOffsetMake(0,-5)
+        controller.tabBarItem = tabItem
+        return controller
+    }
+    
+    //tab bar separator
+    var tabBarSeparator: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.lightGray
+        return view
+    }()
+    
+    //MARK: Tab bar appearance
+    func setupTab() {
+        tabBar.clipsToBounds = true // hide default top border
+        tabBar.addSubview(tabBarSeparator)
         
-        // add separator line
-        //tabBar.clipsToBounds = true // hide default top border
-        //tabBar.addSubview(tabBarSeparator)
+        tabBarSeparator.widthAnchor.constraint(equalTo: tabBar.widthAnchor).isActive = true
+        tabBarSeparator.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        tabBarSeparator.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor).isActive = true
+        tabBarSeparator.topAnchor.constraint(equalTo: tabBar.topAnchor).isActive = true
         
-        //tabBarSeparator.widthAnchor.constraint(equalTo: tabBar.widthAnchor).isActive = true
-        //tabBarSeparator.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        //tabBarSeparator.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor).isActive = true
-        //tabBarSeparator.topAnchor.constraint(equalTo: tabBar.topAnchor).isActive = true
-        
+        //tab appearance
         tabBar.tintColor = Theme.mainColor
         tabBar.barTintColor = UIColor.white
         tabBar.isTranslucent = false
         
         UITabBarItem.appearance().setTitleTextAttributes(tabBarTextAttributesNormal, for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes(tabBarTextAttributesSelected,for: .selected)
-        
     }
+    
     
     /*
     // MARK: - Navigation
