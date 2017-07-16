@@ -19,6 +19,7 @@
 		9AF75EEF1F09F795006A9D94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF75EEE1F09F795006A9D94 /* Assets.xcassets */; };
 		9AF75EF21F09F795006A9D94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF75EF01F09F795006A9D94 /* LaunchScreen.storyboard */; };
 		9AF75EFD1F09F795006A9D94 /* CustomThemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF75EFC1F09F795006A9D94 /* CustomThemeTests.swift */; };
+		9AF8E8691F1AF19E001DF656 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF8E8681F1AF19E001DF656 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		9AF75EF81F09F795006A9D94 /* CustomThemeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomThemeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF75EFC1F09F795006A9D94 /* CustomThemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThemeTests.swift; sourceTree = "<group>"; };
 		9AF75EFE1F09F795006A9D94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AF8E8681F1AF19E001DF656 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				9ABA5D361F12A837000F145F /* Extensions */,
 				9A219A691F0A0E0B007F2983 /* Theme.swift */,
 				9ABA5D301F11B96A000F145F /* LandingViewController.swift */,
+				9AF8E8681F1AF19E001DF656 /* Models.swift */,
 				9A63C6181F1A6CA3001F0C6F /* CategoryCell.swift */,
 				9A63C6061F15A16C001F0C6F /* HomeViewController.swift */,
 				9A63C6161F199406001F0C6F /* HomeCollectionViewController.swift */,
@@ -233,6 +236,7 @@
 				9A63C6191F1A6CA3001F0C6F /* CategoryCell.swift in Sources */,
 				9ABA5D351F12A80D000F145F /* UIImage.swift in Sources */,
 				9A63C6171F199406001F0C6F /* HomeCollectionViewController.swift in Sources */,
+				9AF8E8691F1AF19E001DF656 /* Models.swift in Sources */,
 				9ABA5D311F11B96A000F145F /* LandingViewController.swift in Sources */,
 				9A63C6071F15A16C001F0C6F /* HomeViewController.swift in Sources */,
 			);

@@ -10,7 +10,17 @@ import UIKit
 
 class CategoryCell : UICollectionViewCell, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource,
 UICollectionViewDelegate{
+    //MARK: properties
+    private let cellId = "Cell"
     
+    var homeCategory :HomeCategory?{
+        didSet{
+            if let name = homeCategory?.name {
+                categoryLabel.text = name
+                }
+            }
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -21,7 +31,7 @@ UICollectionViewDelegate{
         fatalError("init(coder:) has not been implemented")
 
     }
-    private let cellId = "Cell"
+    
 
     let homesCollectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -32,22 +42,38 @@ UICollectionViewDelegate{
         return collectionView
     }()
     
+    let categoryLabel:UILabel = {
+        let label = UILabel()
+        label.text = "Homes"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = UIColor.black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     func setupViews(){
         backgroundColor  = UIColor.clear
         
         addSubview(homesCollectionView)
+        addSubview(categoryLabel)
+        
         homesCollectionView.dataSource = self
         homesCollectionView.delegate = self
         
         homesCollectionView.register(HomeCell.self, forCellWithReuseIdentifier: cellId)
-
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-14-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":categoryLabel]))
+        
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":homesCollectionView]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":homesCollectionView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[nameLabel(30)][v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":homesCollectionView,"nameLabel":categoryLabel]))
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        //return 5
+        if let count = homeCategory?.homes?.count {
+            return count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,7 +81,7 @@ UICollectionViewDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: frame.height)
+        return CGSize(width: 200, height: frame.height - 31)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(0, 14, 0, 14)
@@ -81,19 +107,20 @@ class HomeCell: UICollectionViewCell {
         return iv
     }()
     
-    let categoryLabel:UILabel = {
+    let typeLabel:UILabel = {
        let label = UILabel()
         label.text = "Single Bedroom"
         label.font = UIFont.systemFont(ofSize: 12)
-        label.numberOfLines = 2
+        //label.numberOfLines = 2
         label.textColor = UIColor.black
         return label
     }()
     
+    
     let locationLabel: UILabel = {
        let label = UILabel()
         label.text = "1234 Any Street Dr, City, State"
-        label.font = UIFont.systemFont(ofSize: 8)
+        label.font = UIFont.systemFont(ofSize: 10)
         label.textColor = UIColor.gray
         return label
     }()
@@ -101,17 +128,19 @@ class HomeCell: UICollectionViewCell {
     let priceLabel: UILabel = {
         let label = UILabel()
         label.text = "$599"
+        label.textColor = UIColor.black
+        label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
     
     func setupViews(){
         addSubview(imageView)
-        addSubview(categoryLabel)
+        addSubview(typeLabel)
         addSubview(locationLabel)
         addSubview(priceLabel)
 
         imageView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.width)
-        categoryLabel.frame = CGRect(x: 0, y: frame.width + 2, width: frame.width, height: 40)
+        typeLabel.frame = CGRect(x: 0, y: frame.width + 2, width: frame.width, height: 40)
         locationLabel.frame = CGRect(x: 0, y: frame.width + 30, width: frame.width, height: 20)
         priceLabel.frame = CGRect(x: 0, y: frame.width + 46, width: frame.width, height: 20)
     }

@@ -11,10 +11,11 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class HomeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    var homeCategories : [HomeCategory]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        homeCategories = HomeCategory.sampleHomeCategories()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -51,14 +52,18 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 3
+        if let count = homeCategories?.count {
+            return count
+        }else {
+            return 0
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCell
         
-        // Configure the cell
-        
+        // dynamic category name
+        cell.homeCategory = homeCategories?[indexPath.item]
         return cell
     }
     
