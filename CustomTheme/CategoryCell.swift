@@ -17,6 +17,7 @@ UICollectionViewDelegate{
         didSet{
             if let name = homeCategory?.name {
                 categoryLabel.text = name
+                
                 }
             }
     }
@@ -73,11 +74,14 @@ UICollectionViewDelegate{
         if let count = homeCategory?.homes?.count {
             return count
         }
-        return 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HomeCell
+        cell.home = homeCategory?.homes?[indexPath.item]
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -89,6 +93,17 @@ UICollectionViewDelegate{
 }
 
 class HomeCell: UICollectionViewCell {
+    var home :Home?{
+        didSet{
+            typeLabel.text = home?.type
+            locationLabel.text = home?.location
+            if let price = home?.price{
+                priceLabel.text = "$\(price)"
+            }
+        }
+    }
+
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

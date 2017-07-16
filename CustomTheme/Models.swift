@@ -19,13 +19,32 @@ class HomeCategory: NSObject {
         
         let firstHome = Home()
         firstHome.type = "Single Room"
-        firstHome.location = "12556 Custom Street, Los Angeles, CA"
+        firstHome.location = "Los Angeles, CA"
         firstHome.price = 800
         
         homes.append(firstHome)
         
+        let secondHome = Home()
+        secondHome.type = "Whole House"
+        secondHome.location = "Los Angeles, CA"
+        secondHome.price = 1200
+        
+        homes.append(secondHome)
         homeCategory.homes = homes
-        return [homeCategory]
+        
+        var services = [Home]()
+        
+        let serviceCategory = 	HomeCategory()
+        serviceCategory.name = "Services"
+        
+        let firstService = Home()
+        firstService.location = "Los Angeles, CA"
+        firstService.type = "Automobile Repair"
+        
+        services.append(firstService)
+        serviceCategory.homes = services
+        
+        return [homeCategory, serviceCategory]
     }
 }
 
